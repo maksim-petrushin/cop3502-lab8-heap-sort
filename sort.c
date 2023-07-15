@@ -41,8 +41,7 @@ void heapify(int arr[], int n, int i)
 // extraMemoryAllocated counts bytes of memory allocated
 void heapSort(int arr[], int n)
 {	
-	//this is the memory of the temp variable inside the swap function
-	extraMemoryAllocated+=sizeof(int);
+	
 	// this for makes sure that we start sorting from the bottom roots
 	for (int i = n / 2 - 1; i >= 0; i--)
 		heapify(arr, n, i);
@@ -200,7 +199,7 @@ int main(void)
 		heapSort(pDataCopy, dataSz);
 		end = clock();
 		cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-		printf("\truntime\t\t\t: %.1lf\n", cpu_time_used);
+		printf("\truntime\t\t\t: %.5lf\n", cpu_time_used);
 		printf("\textra memory allocated\t: %d\n", extraMemoryAllocated);
 		printArray(pDataCopy, dataSz);
 
@@ -211,7 +210,7 @@ int main(void)
 		mergeSort(pDataCopy, 0, dataSz - 1);
 		end = clock();
 		cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-		printf("\truntime\t\t\t: %.1lf\n", cpu_time_used);
+		printf("\truntime\t\t\t: %.5lf\n", cpu_time_used);
 		printf("\textra memory allocated\t: %d\n", extraMemoryAllocated);
 		printArray(pDataCopy, dataSz);
 
